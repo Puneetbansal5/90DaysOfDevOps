@@ -1,0 +1,19 @@
+Task 1 :
+l) Create a user devops_user and add them to a group devops_team.
+used sudo useradd -m devops_user to add user 
+sudo groupadd devops_team to create group
+sudo usermod -aG devops_team devops_user to add user to a group
+
+2) Set a password and grant sudo access.
+
+sudo passwd devops_user to create password for a user
+sudo usermode -aG dsudo devops_user to give sudo access to user
+
+sudo -l -U to check sudo access and sudo previlige access rights
+
+or id devops_user
+
+3) Restrict SSH login for certain users in /etc/ssh/sshd_config.
+ sudo vi /etc/ssh/sshd_config and added DenyUsers username to restrict ssh access
+
+checked via ssh username@ipxxx-xxx-xx-xx and said permission denied and also used sudo tail -f /var/log/auth.log to check  and confirm  Auth logs must show DenyUsers confirmation.
